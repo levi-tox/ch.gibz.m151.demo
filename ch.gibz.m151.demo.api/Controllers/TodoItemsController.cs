@@ -10,6 +10,7 @@ using ch.gibz.m151.demo.api.Models;
 namespace ch.gibz.m151.demo.api.Controllers
 {
 
+
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
@@ -22,21 +23,6 @@ namespace ch.gibz.m151.demo.api.Controllers
             _context = context;
         }
 
-        /// <summary>
-        /// Gets all Todo Item DTO's
-        /// </summary>
-        /// <remarks>
-        /// Sample request:
-        ///
-        ///     GET /api/TodoItems
-        ///     {
-        ///        "id": 1,
-        ///        "name": "Item1",
-        ///        "isComplete": true
-        ///     }
-        ///
-        /// </remarks>
-        /// <returns>the HTTP Result</returns>
         [HttpGet]
       
         public async Task<ActionResult<IEnumerable<TodoItemDTO>>> GetTodoItems()
@@ -113,6 +99,10 @@ namespace ch.gibz.m151.demo.api.Controllers
                 ItemToDTO(todoItem));
         }
 
+
+        /// <summary>
+        /// Deletes a specific TodoItem.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoItem(long id)
         {
