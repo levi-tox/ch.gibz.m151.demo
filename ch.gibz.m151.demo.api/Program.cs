@@ -14,8 +14,7 @@ namespace ch.gibz.m151.demo.api
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>()
-                        .UseUrls("http://localhost:4000");
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }
